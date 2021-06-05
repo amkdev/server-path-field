@@ -1,0 +1,47 @@
+{
+    "name": "amkdev/server-path-field",
+    "description": "A dropdown field that lets you select an server path within the webroot.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "server path field"
+    ],
+    "support": {
+        "docs": "https://github.com/amkdev/server-path-field/blob/master/README.md",
+        "issues": "https://github.com/amkdev/server-path-field/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander M. Korn",
+            "homepage": "https://github.com/amkdev"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "amkdev\\serverpathfield\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Server Path Field",
+        "handle": "server-path-field",
+        "schemaVersion": "1.1.1",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://github.com/amkdev/server-path-field/blob/master/CHANGELOG.md",
+        "class": "amkdev\\serverpathfield\\ServerPathField"
+    }
+}

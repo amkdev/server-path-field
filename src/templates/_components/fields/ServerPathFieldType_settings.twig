@@ -1,0 +1,31 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Server Path Field plugin for Craft CMS
+ *
+ * ServerPathField Field Settings
+ *
+ * @author     Various
+ * @copyright  https://github.com/amkdev
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("amkdev\\serverpathfield\\assetbundles\\serverpathfield\\serverpathfieldfieldasset") %}
+
+{{ forms.textField({
+    label: 'Root Path',
+    instructions: 'All subdirectories of this root directory (within you webroot) will be selectable.',
+    id: 'rooPath',
+    name: 'rootPath',
+    value: field['rootPath']})
+}}
+
+{{ forms.textField({
+    label: 'Directory Filter',
+    instructions: 'Only directories containing this string will be selectable. Separate multiple strings with comma.',
+    id: 'dirFilter',
+    name: 'dirFilter',
+    value: field['dirFilter']})
+}}
