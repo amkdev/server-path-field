@@ -3,7 +3,7 @@
  *
  * ServerPathField Field JS
  *
- * @author     Various
+ * @author     Alexander M. Korn
  * @link       https://github.com/amkdev
  */
 

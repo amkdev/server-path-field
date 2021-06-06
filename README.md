@@ -2,7 +2,7 @@
 
 # Server Path Field plugin for Craft CMS 3.x
 
-A dropdown field that lets you select a directory in the public webroot of a Craft CMS site. It's possible to define a root path (within the webroot) and filter directories.
+A dropdown field that lets you select a directory in the public webroot of a craftCMS project. It's possible to define a root path (within the webroot) and filter multiple directories.
 
 ## Requirements
 
@@ -24,9 +24,9 @@ To install the plugin, follow these instructions.
 
 ## Server Path Field Overview
 
-Server Path Field adds a custom FieldType to Craft CMS called Server Path. This lets you choose from any direcotry found in the webroot, which then returns it as string. 
+Server Path Field adds a custom FieldType to Craft CMS called Server Path. This lets you choose from any direcotry found in the webroot, which then returns the path as twig value. 
 
-This plugin is pretty basic, but gets the job done. 
+This plugin is basic and not so useful as standalone, but it extends the possiblities of other extensions need a specific public path. For instance [Server Files](https://github.com/amkdev/server-files) or [GetFiles](https://github.com/amkdev/craft-getfiles).
 
 ## Disclaimer
 

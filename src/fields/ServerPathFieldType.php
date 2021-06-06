@@ -3,7 +3,7 @@
 /**
  * Server Path Field plugin for Craft CMS 3.x
  *
- * @author     Various
+ * @author     Ryan Whitney, Alexander M. Korn
  * @link       https://github.com/amkdev
  */
 
@@ -61,7 +61,7 @@ class ServerPathFieldType extends PlainText implements PreviewableFieldInterface
         $rules = parent::rules();
         $rules = array_merge($rules, [
             ['dirFilter', 'string'],
-            ['dirFilter', 'default', 'value' => 'images'],
+            ['dirFilter', 'default', 'value' => ''],
         ], [
             ['rootPath', 'string'],
             ['rootPath', 'default', 'value' => 'media/'],

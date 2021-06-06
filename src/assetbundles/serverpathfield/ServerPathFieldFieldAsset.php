@@ -4,7 +4,7 @@
  *
  * ServerPathField Field Asset
  *
- * @author     Various
+ * @author     Ryan Whitney, Alexander M. Korn
  * @link       https://github.com/amkdev
  */
 
