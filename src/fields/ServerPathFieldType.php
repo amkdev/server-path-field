@@ -93,14 +93,13 @@ class ServerPathFieldType extends PlainText implements PreviewableFieldInterface
     public function getInputHtml($value, ElementInterface $element = null): string
     {
         $settings = $this->getSettings();
-        $path = rtrim(Craft::getAlias('@webroot') . DIRECTORY_SEPARATOR . $settings['rootPath'], DIRECTORY_SEPARATOR);
-
+        $settings['rootPath'] = trim(rtrim( $settings['rootPath'], DIRECTORY_SEPARATOR));
+        $path = Craft::getAlias('@webroot') . DIRECTORY_SEPARATOR . $settings['rootPath'];
 
         $dirList = array();
         if (is_dir($path)) {
 
             $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
-
 
             foreach ($iterator as $file) {
 
@@ -124,10 +123,10 @@ class ServerPathFieldType extends PlainText implements PreviewableFieldInterface
             if (count($dirList) > 0) {
                 $string = '<div class="select"><select name="' . $this->handle .  '">';
                 $string .= '<option value="">Choose a directory</option>';
-
                 foreach ($dirList as $entry) {
-                    $selected = ($value === $entry) ? 'selected="selected' : '';
-                    $string .= '<option ' . $selected .  ' value="' .  $settings['rootPath'] . DIRECTORY_SEPARATOR . $entry . '">' . $entry .  '</option>';
+                    $entyVal = $settings['rootPath'] . DIRECTORY_SEPARATOR . $entry;
+                    $selected = ($value === $entyVal ) ? 'selected="selected' : '';
+                    $string .= '<option ' . $selected .  ' value="' . $entyVal . '">' . $entry .  '</option>';
                 }
                 $string .= '</select></div>';
             } else {
