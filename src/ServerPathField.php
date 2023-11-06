@@ -2,7 +2,7 @@
 /**
  * Server Path Field plugin for Craft CMS
  *
- * ServerPathField 
+ * ServerPathField
  *
  * @author     Ryan Whitney, Alexander M. Korn
  * @link       https://github.com/amkdev
@@ -28,45 +28,48 @@ use yii\base\Event;
  */
 class ServerPathField extends Plugin
 {
-    // Static Properties
-    // =========================================================================
+  // Static Properties
+  // =========================================================================
 
-    /**
-     * @var ServerPathField
-     */
-    public static $plugin;
+  /**
+   * @var ServerPathField
+   */
+  public static $plugin;
 
-    // Public Methods
-    // =========================================================================
+  // Public Methods
+  // =========================================================================
 
-    /**
-     * @inheritdoc
-     */
-    public function init()
-    {
-        parent::init();
-        self::$plugin = $this;
+  /**
+   * @inheritdoc
+   */
+  public function init()
+  {
 
-        // Register our fields
-        Event::on(
-        	Fields::class, 
-        	Fields::EVENT_REGISTER_FIELD_TYPES,
-            function(RegisterComponentTypesEvent $event) {
-                $event->types[] = ServerPathFieldType::class;
-            }
-        );
+    $this->controllerNamespace = 'amkdev\\serverpathfield\\fields\\ServerPathFieldType';
 
-        Craft::info(
-            Craft::t(
-                'server-path-field',
-                '{name} plugin loaded',
-                ['name' => $this->name]
-            ),
-            __METHOD__
-        );
-    }
+    parent::init();
+    self::$plugin = $this;
 
-    // Protected Methods
-    // =========================================================================
+    // Register our fields
+    Event::on(
+      Fields::class,
+      Fields::EVENT_REGISTER_FIELD_TYPES,
+      function (RegisterComponentTypesEvent $event) {
+        $event->types[] = ServerPathFieldType::class;
+      }
+    );
+
+    Craft::info(
+      Craft::t(
+        'server-path-field',
+        '{name} plugin loaded',
+        ['name' => $this->name]
+      ),
+      __METHOD__
+    );
+  }
+
+  // Protected Methods
+  // =========================================================================
 
 }
