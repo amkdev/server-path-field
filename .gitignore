@@ -1,0 +1,10 @@
+# BUILD FILES
+/bower_components/*
+/node_modules/*
+/build/*
+/yarn-error.log
+
+# MISC FILES
+.cache
+/.idea
+.DS_Store

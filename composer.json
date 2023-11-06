@@ -2,7 +2,7 @@
     "name": "amkdev/server-path-field",
     "description": "Craft CMS field type that provides a dropdown field that let you select a server path within the webroot.",
     "type": "craft-plugin",
-    "version": "1.0.0.2",
+    "version": "1.0.0.3",
     "keywords": [
         "craft",
         "cms",
